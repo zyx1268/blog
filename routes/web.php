@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//用户添加路由
+Route::get('user/add',  'UserController@add');
+
+//用户执行添加路由
+Route::post('user/store',  'UserController@store');
+
+//用户列表页路由
+Route::get('user/index',  'UserController@index');
+
+//用户修改路由
+Route::get('user/edit/{id}',  'UserController@edit');
+
+Route::post('user/update',  'UserController@update');
