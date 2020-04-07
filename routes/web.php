@@ -28,3 +28,6 @@ Route::get('user/index',  'UserController@index');
 Route::get('user/edit/{id}',  'UserController@edit');
 
 Route::post('user/update',  'UserController@update');
+
+//用户删除路由
+Route::get('user/del/{id}',  'UserController@destroy');

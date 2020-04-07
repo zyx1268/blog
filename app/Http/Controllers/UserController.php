@@ -77,4 +77,26 @@ class UserController extends Controller
             return back();
         }
     }
+
+    //用户删除
+    public function destroy($id)
+    {
+        $user= User::find($id);
+
+        $res = $user->delete();
+
+        if($res) {
+            $data=[
+                'status'=>0,
+                'message'=>'删除成功'
+            ];
+        } else{
+            $data=[
+                'status'=>1,
+                'message'=>'删除失败'
+            ];
+        }
+
+        return $data;
+    }
 }
